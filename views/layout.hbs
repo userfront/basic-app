@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="../stylesheets/style.css" />
+
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>{{title}}</title>
+
+  <!-- Userfront -->
+  <!-- prettier-ignore -->
+  <script id="Userfront-script">
+    (function (m, o, d, u, l, a, r, i, z, e) {
+      u[m] = { rq: [], ready: function (j) { u[m].rq.push(j); }, m: m, o: o, d: d, r: r }; function j(s) { return encodeURIComponent(btoa(s)); } z = l.getElementById(m + "-" + a); r = u.location;
+      e = [d + "/page/" + o + "/" + j(r.pathname) + "/" + j(r.host) + "?t=" + Date.now(), d]; e.map(function (w) { i = l.createElement(a); i.defer = 1; i.src = w; z.parentNode.insertBefore(i, z); }); u.amvartem = m;
+    })("Userfront", "q68b5qb9", "https://mod.userfront.com/v2", window, document, "script");
+  </script>
+  <!--/Userfront -->
+</head>
+
+<body>
+  <noscript>
+    <strong>Userfront requires JavaScript - please enable it to continue.</strong>
+  </noscript>
+
+  <div class="bg"></div>
+  <div id="userfront-radokd"></div>
+
+  <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+    {{{body}}}
+  </div>
+</body>
+
+<script>
+  Userfront.ready(function () {
+    var nav = document.querySelector('[radokd] .am-header')
+    nav.classList.add('bg')
+  })
+</script>
+
+</html>

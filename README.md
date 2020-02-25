@@ -12,7 +12,7 @@ This is a small app made with Express using the [express-generator from the docs
 
 Clone repo and install dependencies: `npm install`
 
-Start app: `npm run start`
+Start app: `npm start`
 
 Start in watch/development mode: `npm run dev`
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Userfront app walkthrough</title>
+
+    <!-- Userfront -->
+    <!-- prettier-ignore -->
+    <script id="Userfront-script">
+      (function (m, o, d, u, l, a, r, i, z, e) {
+        u[m] = { rq: [], ready: function (j) { u[m].rq.push(j); }, m: m, o: o, d: d, r: r }; function j(s) { return encodeURIComponent(btoa(s)); } z = l.getElementById(m + "-" + a); r = u.location;
+        e = [d + "/page/" + o + "/" + j(r.pathname) + "/" + j(r.host) + "?t=" + Date.now(), d]; e.map(function (w) { i = l.createElement(a); i.defer = 1; i.src = w; z.parentNode.insertBefore(i, z); }); u.amvartem = m;
+      })("Userfront", "PROJECT_ID", "https://mod.userfront.com/v2", window, document, "script");
+    </script>
+    <!--/Userfront -->
+  </head>
+
+  <body>
+    <noscript>
+      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
+    </noscript>
+
+    <div class="bg"></div>
+
+    <header class="header bg text-center">
+      <div class="brand-text mt-2">
+        Userfront toolkit
+      </div>
+    </header>
+
+    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4 mt-3">
+          <div class="d-flex justify-content-between m-auto">
+            <a href="/PROJECT_ID/home">Home</a>
+            <a href="/PROJECT_ID/login">Login</a>
+            <a href="/PROJECT_ID/signup">Signup</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+          <div class="content">
+            <p>
+              Use the Password Reset Form on the Toolkit screen to allow your users to reset their
+              password in case they forget it. They will be sent a link to their email. The link
+              sent will be the "Password reset URL" specified on the Settings screen.
+              <br />
+              <br />
+              You can display this same Password Reset Form on the page the user lands on and it
+              will display two password inputs, rather than a single email input, allowing them to
+              set their new password.
+            </p>
+          </div>
+
+          <div style="max-width: 400px; margin: 80px auto 0;">
+            <div id="userfront-radarr"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Userfront app walkthrough</title>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
+    </noscript>
+
+    <div class="bg"></div>
+
+    <header class="header bg text-center">
+      <div class="brand-text mt-2">
+        Userfront toolkit
+      </div>
+    </header>
+
+    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+      <div class="row mt-5">
+        <div class="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="my-4 text-center">
+                <h2>Enter your project ID</h2>
+              </div>
+
+              <form
+                method="post"
+                action="/project"
+                id="project-form"
+                name="project-form"
+                class="py-2 project-form"
+              >
+                <div class="form-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="project"
+                    name="project"
+                    placeholder="Project ID"
+                  />
+                </div>
+
+                <div class="mt-2">
+                  <button class="btn btn-block btn-primary mb-2" type="submit">
+                    SUBMIT
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

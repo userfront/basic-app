@@ -1,7 +1,6 @@
-const createError = require('http-errors')
-const express = require('express')
 const fs = require('fs')
 const path = require('path')
+const express = require('express')
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -32,10 +31,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/project', (req, res) => {
-  if (!req.app.locals.project) {
-    req.app.locals.project = req.body.project
-  }
-
   res.redirect(req.body.project + '/signup')
 })
 
@@ -57,11 +52,6 @@ app.get('/:projectId/reset', async (req, res) => {
 app.get('/:projectId/home', async (req, res) => {
   const page = await getPage('home', req.params.projectId)
   res.send(page)
-})
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404))
 })
 
 // Create server

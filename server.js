@@ -30,10 +30,6 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/project', (req, res) => {
-  res.redirect(req.body.project + '/signup')
-})
-
 app.get('/:projectId/signup', async (req, res) => {
   const page = await getPage('signup', req.params.projectId)
   res.send(page)

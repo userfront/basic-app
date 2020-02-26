@@ -43,13 +43,7 @@
                 <h2>Enter your project ID</h2>
               </div>
 
-              <form
-                method="post"
-                action="/project"
-                id="project-form"
-                name="project-form"
-                class="py-2 project-form"
-              >
+              <form id="project-form" name="project-form" class="py-2 project-form">
                 <div class="form-group mb-1">
                   <input
                     type="text"
@@ -71,5 +65,16 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault()
+        var projectInput = document.getElementsByName('project')[0]
+        window.location.href = projectInput.value + '/signup'
+      }
+
+      var form = document.getElementById('project-form')
+      form.addEventListener('submit', handleSubmit)
+    </script>
   </body>
 </html>

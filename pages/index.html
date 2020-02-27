@@ -44,11 +44,7 @@
                 <h2>Enter your project ID</h2>
               </div>
 
-              <form
-                id="project-form"
-                name="project-form"
-                class="py-2 project-form"
-              >
+              <form id="project-form" name="project-form" class="py-2 project-form">
                 <div class="form-group mb-1">
                   <input
                     type="text"
@@ -73,13 +69,13 @@
 
     <script>
       function handleSubmit(event) {
-        event.preventDefault();
-        var projectInput = document.getElementsByName("project")[0];
-        window.location.href = projectInput.value + "/signup";
+        event.preventDefault()
+        var projectInput = document.getElementsByName('project')[0]
+        window.location.replace('https://' + projectInput.value + '.demo.userfront.com/signup')
       }
 
-      var form = document.getElementById("project-form");
-      form.addEventListener("submit", handleSubmit);
+      var form = document.getElementById('project-form')
+      form.addEventListener('submit', handleSubmit)
     </script>
   </body>
 </html>

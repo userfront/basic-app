@@ -23,27 +23,38 @@
 
   <body>
     <noscript>
-      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
+      <strong
+        >Userfront requires JavaScript - please enable it to continue.</strong
+      >
     </noscript>
 
     <div class="bg"></div>
 
-    <header class="header bg text-center">
-      <div class="brand-text mt-2">
-        Userfront toolkit
+    <header class="p-2">
+      <div class="brand">
+        <a href="/">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+          />
+        </a>
       </div>
     </header>
 
-    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+    <div class="container">
       <div class="row mt-5">
-        <div class="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-4">
+        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
           <div class="card">
             <div class="card-body">
               <div class="my-4 text-center">
                 <h2>Enter your project ID</h2>
               </div>
 
-              <form id="project-form" name="project-form" class="py-2 project-form">
+              <form
+                id="project-form"
+                name="project-form"
+                class="py-2 project-form"
+              >
                 <div class="form-group mb-1">
                   <input
                     type="text"
@@ -68,13 +79,13 @@
 
     <script>
       function handleSubmit(event) {
-        event.preventDefault()
-        var projectInput = document.getElementsByName('project')[0]
-        window.location.href = projectInput.value + '/signup'
+        event.preventDefault();
+        var projectInput = document.getElementsByName("project")[0];
+        window.location.href = projectInput.value + "/signup";
       }
 
-      var form = document.getElementById('project-form')
-      form.addEventListener('submit', handleSubmit)
+      var form = document.getElementById("project-form");
+      form.addEventListener("submit", handleSubmit);
     </script>
   </body>
 </html>

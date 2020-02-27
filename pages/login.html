@@ -32,38 +32,52 @@
   </head>
 
   <body>
-    <noscript>
-      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
-    </noscript>
-
     <div class="bg"></div>
 
-    <header class="header bg text-center">
-      <div class="brand-text mt-2">
-        Userfront toolkit
+    <header class="p-2">
+      <div class="brand">
+        <a href="login">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+          />
+        </a>
       </div>
     </header>
 
-    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+    <div class="container pb-5">
       <div class="row">
-        <div class="col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4 mt-3">
-          <div class="d-flex justify-content-between m-auto">
-            <a href="/PROJECT_ID/home">Home</a>
-            <a href="/PROJECT_ID/signup">Signup</a>
-            <a href="/PROJECT_ID/reset">Password reset</a>
+        <div class="col-md-6 pt-5 text-center">
+          <div class="text-center">
+            <div
+              class="d-inline-block"
+              style="min-width:400px;min-height:280px;"
+            >
+              <!-- Login form -->
+              <div id="userfront-orkkod"></div>
+            </div>
+
+            <div class="my-3">
+              <a href="signup" class="mr-5">Signup</a>
+              <a href="reset">Password reset</a>
+            </div>
           </div>
         </div>
-
-        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-          <div class="content">
+        <div class="col-md-6 pt-5">
+          <div class="content mx-3">
             <p>
-              Use the Login Form on the Toolkit screen to let your users log into your app. Users
-              will be redirected to the "Login URL" specified on the Settings screen.
+              Your Login Form lets your users log in.
             </p>
-          </div>
-
-          <div style="max-width: 400px; margin: 80px auto 0;">
-            <div id="userfront-orkkod"></div>
+            <p>
+              When users log in, they are redirected to the Login URL in your
+              Project Settings.
+            </p>
+            <p>
+              <img
+                src="https://res.cloudinary.com/component/image/upload/v1582764389/login_url_fbagtp.png"
+                class="mw-100 rounded"
+              />
+            </p>
           </div>
         </div>
       </div>

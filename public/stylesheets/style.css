@@ -2,7 +2,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1,
@@ -21,7 +21,7 @@ a,
 button,
 input,
 .card-body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 [radokd] .am-header .am-logo {
@@ -35,8 +35,9 @@ a {
 
 .bg {
   position: fixed;
-  background: url('../images/bg-pattern.png'), #7b4397;
-  background: url('../images/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../images/bg-pattern.png"), #7b4397;
+  background: url("../images/bg-pattern.png"),
+    linear-gradient(to left, #7b4397, #dc2430);
   top: 0;
   right: 0;
   bottom: 0;
@@ -56,14 +57,13 @@ a {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.075);
 }
 
-.brand-text {
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 40px;
-  letter-spacing: 2px;
+.brand a {
   text-decoration: none;
-  text-align: center;
   display: inline-block;
+}
+.brand img {
+  width: 40px;
+  height: auto;
 }
 
 @media (max-width: 980px) {
@@ -74,11 +74,10 @@ a {
 
 .content {
   color: white;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid #bbb;
+  background: rgba(50, 50, 50, 0.7);
   border-radius: 6px;
-  padding: 1rem;
-  margin: 2rem 0;
+  padding: 2rem;
+  max-width: 600px;
 }
 
 .project-form .btn {

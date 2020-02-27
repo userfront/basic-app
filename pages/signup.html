@@ -32,38 +32,59 @@
   </head>
 
   <body>
-    <noscript>
-      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
-    </noscript>
-
     <div class="bg"></div>
 
-    <header class="header bg text-center">
-      <div class="brand-text mt-2">
-        Userfront toolkit
+    <header class="p-2">
+      <div class="brand">
+        <a href="login">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+          />
+        </a>
       </div>
     </header>
 
-    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+    <div class="container pb-5">
       <div class="row">
-        <div class="col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4 mt-3">
-          <div class="d-flex justify-content-between m-auto">
-            <a href="/PROJECT_ID/home">Home</a>
-            <a href="/PROJECT_ID/login">Login</a>
-            <a href="/PROJECT_ID/reset">Password reset</a>
+        <div class="col-md-6 pt-5 text-center">
+          <div class="text-center">
+            <div class="d-inline-block" style="min-height:600px;">
+              <!-- Signup form -->
+              <div id="userfront-bannba"></div>
+            </div>
+
+            <div class="my-3">
+              <a href="login" class="mr-5">Login</a>
+              <a href="reset">Password reset</a>
+            </div>
           </div>
         </div>
-
-        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-          <div class="content">
+        <div class="col-md-6 pt-5">
+          <div class="content mx-3">
             <p>
-              Use the Signup Form on the Toolkit screen to begin growing your user base. Users will
-              be redirected to the "Signup URL" specified on the Settings screen.
+              Your Signup Form lets you start growing your user base right away.
             </p>
-          </div>
-
-          <div style="max-width: 400px; margin: 80px auto 0;">
-            <div id="userfront-bannba"></div>
+            <p>
+              When users sign up, they are redirected to the Signup URL in your
+              Project Settings.
+            </p>
+            <p>
+              <img
+                src="https://res.cloudinary.com/component/image/upload/v1582763350/signup_url_vvjg8d.png"
+                class="mw-100 rounded"
+              />
+            </p>
+            <p>
+              You can also set a webhook if you want to be notified every time a
+              user is created.
+            </p>
+            <p>
+              <img
+                src="https://res.cloudinary.com/component/image/upload/v1582764381/webhook_url_qcmvkl.png"
+                class="mw-100 rounded"
+              />
+            </p>
           </div>
         </div>
       </div>

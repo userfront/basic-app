@@ -7,18 +7,25 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-function getPage(pageName, projectId) {
+function getPage(pageName) {
   return new Promise(resolve => {
     fs.readFile('./pages/' + pageName + '.html', 'utf8', (err, data) => {
       if (err) {
         return console.error(err)
       }
 
-      const result = data.replace(/PROJECT_ID/g, projectId)
+      // Replace project ID or default to demo project
+      const result = data.replace(/PROJECT_ID/g, app.locals.projectId || 'g48xypb9')
       resolve(result)
     })
   })
 }
+
+// Set projectId from subdomain
+app.use(function(req, res, next) {
+  app.locals.projectId = req.hostname.split('.').length ? req.hostname.split('.')[0] : ''
+  next()
+})
 
 app.get('/', (req, res) => {
   fs.readFile('./pages/index.html', 'utf8', (err, data) => {
@@ -30,23 +37,23 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/:projectId/signup', async (req, res) => {
-  const page = await getPage('signup', req.params.projectId)
+app.get('/signup', async (req, res) => {
+  const page = await getPage('signup')
   res.send(page)
 })
 
-app.get('/:projectId/login', async (req, res) => {
-  const page = await getPage('login', req.params.projectId)
+app.get('/login', async (req, res) => {
+  const page = await getPage('login')
   res.send(page)
 })
 
-app.get('/:projectId/reset', async (req, res) => {
-  const page = await getPage('reset', req.params.projectId)
+app.get('/reset', async (req, res) => {
+  const page = await getPage('reset')
   res.send(page)
 })
 
-app.get('/:projectId/home', async (req, res) => {
-  const page = await getPage('home', req.params.projectId)
+app.get('/home', async (req, res) => {
+  const page = await getPage('home')
   res.send(page)
 })
 

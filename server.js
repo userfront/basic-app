@@ -24,6 +24,8 @@ function getPage(pageName) {
 // Set projectId from subdomain
 app.use(function(req, res, next) {
   console.log('req.subdomains', req.subdomains)
+  console.log(`req.get("host")`, req.get('host'))
+
   app.locals.projectId = req.subdomains.length ? req.subdomains[req.subdomains.length - 1] : ''
   next()
 })

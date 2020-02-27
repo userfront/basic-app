@@ -32,47 +32,52 @@
   </head>
 
   <body>
-    <noscript>
-      <strong>Userfront requires JavaScript - please enable it to continue.</strong>
-    </noscript>
-
     <div class="bg"></div>
 
-    <header class="header bg text-center">
-      <div class="brand-text mt-2">
-        Userfront toolkit
+    <header class="p-2">
+      <div class="brand">
+        <a href="/">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+          />
+        </a>
       </div>
     </header>
 
-    <div class="container-fluid" style="padding-top: 100px; padding-bottom: 80px;">
+    <div class="container pb-5">
       <div class="row">
-        <div class="col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4 mt-3">
-          <div class="d-flex justify-content-between m-auto">
-            <a href="/PROJECT_ID/login">Login</a>
-            <a href="/PROJECT_ID/signup">Signup</a>
-            <a href="/PROJECT_ID/reset">Password reset</a>
+        <div class="col-md-6 pt-5 text-center">
+          <div class="text-center">
+            <div
+              class="d-inline-block"
+              style="min-width:400px;min-height:280px;"
+            >
+              <!-- Logout button -->
+              <div id="userfront-bakddr"></div>
+              <!-- User profile -->
+              <div id="userfront-alnabk"></div>
+            </div>
           </div>
         </div>
-
-        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-          <div class="content">
+        <div class="col-md-6 pt-5">
+          <div class="content mx-3">
             <p>
-              You can determine if a user is logged in by accessing the `auth.xxxxxxxx` cookie. If it is present, the user
-              is logged in and the Log Out button will be visible.
-              <br />
-              <br />
-              Clicking the Log Out button will do the following:
-              <ol>
-                <li>Log the user out</li>
-                <li>Remove the `auth.xxxxxxxx` cookie</li>
-                <li>Redirect the user to the "Logout URL" specified on the Settings screen.</li>
-              </ol>
+              You can determine if a user is logged in by accessing the
+              `auth.xxxxxxxx` cookie. If it is present, the user is logged in
+              and the Log Out button will be visible.
             </p>
-          </div>
-
-          <div style="max-width: 400px; margin: 80px auto 0;">
-            <div id="userfront-alnabk"></div>
-            <div id="userfront-bakddr"></div>
+            <p>
+              Clicking the Log Out button will log out the user, invalidate
+              their token, and redirect them to the Logout URL in your Project
+              Settings.
+            </p>
+            <p>
+              <img
+                src="https://res.cloudinary.com/component/image/upload/v1582764389/logout_url_qbubr1.png"
+                class="mw-100 rounded"
+              />
+            </p>
           </div>
         </div>
       </div>

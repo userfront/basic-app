@@ -23,6 +23,7 @@ function getPage(pageName) {
 
 // Set projectId from subdomain
 app.use(function(req, res, next) {
+  console.log('req.hostname', req.hostname)
   app.locals.projectId = req.hostname.split('.').length ? req.hostname.split('.')[0] : ''
   next()
 })

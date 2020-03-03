@@ -66,6 +66,9 @@ app.get("/reset", async (req, res) => {
 });
 
 app.get("/dashboard", async (req, res) => {
+  // Redirect if the auth.{projectId} header is not present
+  // or is expired
+  console.log(req.headers);
   const page = await getPage("dashboard");
   res.send(page);
 });

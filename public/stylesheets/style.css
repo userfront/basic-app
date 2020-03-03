@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, span, i, a, button, input, .card-body {
   margin-left: -60px;
 }
 
-[bakddr] .af-text-muted, [bakddr] a {
+[bakddr] .af-text-muted {
   color: white !important;
 }
 

@@ -1,15 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const app = express();
 
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 function getPage(pageName) {
   return new Promise(resolve => {
-    console.log("Get page", pageName);
     fs.readFile("./pages/" + pageName + ".html", "utf8", (err, data) => {
       if (err) {
         console.error(err);
@@ -68,9 +69,10 @@ app.get("/reset", async (req, res) => {
 });
 
 app.get("/dashboard", async (req, res) => {
-  // Redirect if the auth.{projectId} header is not present
-  // or is expired
-  console.log(req.headers);
+  // Redirect if the auth.${projectId} header is not present
+  if (!app.locals.projectId || !req.cookies[`auth.${app.locals.projectId}`]) {
+    return res.redirect("/login?message=Log in to access the dashboard");
+  }
   const page = await getPage("dashboard");
   res.send(page);
 });

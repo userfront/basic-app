@@ -9,9 +9,11 @@ app.use(express.urlencoded({ extended: false }));
 
 function getPage(pageName) {
   return new Promise(resolve => {
+    console.log("Get page", pageName);
     fs.readFile("./pages/" + pageName + ".html", "utf8", (err, data) => {
       if (err) {
-        return console.error(err);
+        console.error(err);
+        return res.send("Problem loading page");
       }
 
       // Replace project ID or default to demo project
@@ -43,7 +45,7 @@ app.get("/", (req, res) => {
 
   fs.readFile(fileToSend, "utf8", (err, data) => {
     if (err) {
-      console.log(err);
+      console.error(err);
       return res.send("Problem loading page");
     }
     res.send(data);

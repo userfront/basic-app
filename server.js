@@ -70,8 +70,11 @@ app.get("/reset", async (req, res) => {
 
 app.get("/dashboard", async (req, res) => {
   // Redirect if the auth.${projectId} header is not present
+  console.log(req.cookies);
+  console.log(`auth.${app.locals.projectId}`);
+  console.log(req.cookies[`auth.${app.locals.projectId}`]);
   if (!app.locals.projectId || !req.cookies[`auth.${app.locals.projectId}`]) {
-    return res.redirect("/login?message=Log in to access the dashboard");
+    return res.redirect("/?message=Log in to access the dashboard");
   }
   const page = await getPage("dashboard");
   res.send(page);

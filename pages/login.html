@@ -49,12 +49,18 @@
       <div class="row">
         <div class="col-md-6 pt-5 text-center">
           <div class="text-center">
-            <div
-              class="d-inline-block"
-              style="min-width:400px;min-height:280px;"
-            >
+            <div class="d-inline-block">
               <!-- Login form -->
-              <div id="userfront-orkkod"></div>
+              <div
+                id="userfront-orkkod"
+                style="min-width:400px;min-height:280px;"
+              ></div>
+
+              <div
+                id="info-message"
+                class="alert alert-info mt-3"
+                style="display:none"
+              ></div>
             </div>
 
             <div class="my-3">
@@ -83,4 +89,15 @@
       </div>
     </div>
   </body>
+
+  <script>
+    if (window.location.search.indexOf("?message=") > -1) {
+      var alert = document.getElementById("info-message");
+      var message = decodeURIComponent(
+        window.location.search.split("?message=")[1].split("?")[0]
+      );
+      alert.innerHTML = message;
+      alert.style.display = "block";
+    }
+  </script>
 </html>

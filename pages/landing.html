@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Userfront app walkthrough</title>
+  </head>
+
+  <body>
+    <div class="bg"></div>
+
+    <header class="p-2">
+      <div class="brand">
+        <a href="/">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div
+                id="project-alert"
+                class="alert alert-info"
+                style="display:none;"
+              >
+                If you are running this page locally, be sure to add your
+                project ID to the Userfront script on each page.
+              </div>
+              <h2 class="my-4">Userfront demo</h2>
+              <h5 class="mb-4">
+                These tools are included with your Userfront project:
+              </h5>
+              <div class="list-group">
+                <a
+                  href="/signup"
+                  class="list-group-item list-group-item-action"
+                >
+                  <div class="media">
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_240,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_240,b_rgb:ffffff/v1582158400/signup_rntzec.png"
+                      class="mr-3"
+                      style="width:240px"
+                      alt="Logout form"
+                    />
+                    <div class="media-body">
+                      <h4 class="mt-0">Signup form</h4>
+                      <p>
+                        Allows a new user to sign up for your project.
+                      </p>
+                      <p>
+                        When a user signs up, they are redirected to the URL of
+                        your choice (default is <code>/dashboard</code>). They
+                        also receive a welcome email with a link to confirm
+                        their email address.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="/login" class="list-group-item list-group-item-action">
+                  <div class="media">
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582157205/login_mogj1i.png"
+                      class="mr-3"
+                      style="width:240px"
+                      alt="Login form"
+                    />
+                    <div class="media-body">
+                      <h4 class="mt-0">Login form</h4>
+                      <p>
+                        Allows an existing user to log into your project.
+                      </p>
+                      <p>
+                        When a user logs in, they are redirected to the URL of
+                        your choice (default is <code>/dashboard</code>). In
+                        addition to logging in directly, users can request a
+                        login link or password reset email.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="/reset" class="list-group-item list-group-item-action">
+                  <div class="media">
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/v1582158400/reset_gtr63a.png"
+                      class="mr-3"
+                      style="width:240px"
+                      alt="Password reset form"
+                    />
+                    <div class="media-body">
+                      <h4 class="mt-0">Password reset form</h4>
+                      <p>
+                        Allows an existing user to reset their password.
+                      </p>
+                      <p>
+                        When users request a password reset email, they are
+                        directed to the URL of your choice (default is
+                        <code>/reset</code>). This form is used to send the
+                        password reset email and also to reset the password.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="/dashboard"
+                  class="list-group-item list-group-item-action"
+                >
+                  <div class="media">
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582158400/logout_uje4x0.png"
+                      class="mr-3"
+                      style="width:240px"
+                      alt="Logout button"
+                    />
+                    <div class="media-body">
+                      <h4 class="mt-0">Logout button</h4>
+                      <p>
+                        Allows a logged in user to log out.
+                      </p>
+                      <p>
+                        When users log out, they are directed to the URL of your
+                        choice (default is
+                        <code>/login</code>).
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="/dashboard"
+                  class="list-group-item list-group-item-action"
+                >
+                  <div class="media">
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582158893/profile_kbeaou.png"
+                      class="mr-3"
+                      style="width:240px"
+                      alt="User profile"
+                    />
+                    <div class="media-body">
+                      <h4 class="mt-0">User profile</h4>
+                      <p>
+                        Allows a logged in user to view and update their
+                        profile.
+                      </p>
+                      <p>
+                        Updates are automatically reflected in your user
+                        dashboard.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var alert = document.getElementById("project-alert");
+    if (window.location.href.indexOf("userfront.dev") < 0) {
+      alert.style.display = "block";
+    }
+  </script>
+</html>

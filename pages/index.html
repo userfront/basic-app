@@ -42,17 +42,25 @@
             <div class="card-body">
               <div class="my-4 text-center">
                 <h2>Enter your project ID</h2>
+                <img
+                  src="https://res.cloudinary.com/component/image/upload/w_400,e_sharpen:50,e_grayscale/v1583347563/guide/project_id_ilsrsa.png"
+                  class="mw-100 my-1"
+                  alt="Userfront project ID"
+                />
+                <p class="text-muted">
+                  Found in your dashboard URL.
+                </p>
               </div>
 
               <form
                 id="project-form"
                 name="project-form"
-                class="py-2 project-form"
+                class="py-3 project-form"
               >
-                <div class="form-group mb-1">
+                <div class="form-group mb-2">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control form-control-lg"
                     id="project"
                     name="project"
                     placeholder="Project ID"
@@ -61,8 +69,17 @@
 
                 <div class="mt-2">
                   <button class="btn btn-block btn-primary mb-2" type="submit">
-                    SUBMIT
+                    Submit
                   </button>
+                </div>
+
+                <div class="mt-5 w-100 text-center">
+                  <a
+                    href="https://g48xypb9.userfront.dev"
+                    style="color:#5e72e4"
+                  >
+                    Use example ID
+                  </a>
                 </div>
               </form>
             </div>

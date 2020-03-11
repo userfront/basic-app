@@ -13,5 +13,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "prettier": {
+    "printWidth": 100
   }
 }

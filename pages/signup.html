@@ -7,87 +7,47 @@
     <link rel="icon" href="../images/favicon.png" />
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
 
-    <title>Userfront app walkthrough</title>
+    <title>Userfront toolkit demo</title>
 
     <!-- Userfront -->
     <!-- prettier-ignore -->
     <script id="Userfront-script">
-      (function (m, o, d, u, l, a, r, i, z, e) {
-        u[m] = { rq: [], ready: function (j) { u[m].rq.push(j); }, m: m, o: o, d: d, r: r }; function j(s) { return encodeURIComponent(btoa(s)); } z = l.getElementById(m + "-" + a); r = u.location;
-        e = [d + "/page/" + o + "/" + j(r.pathname) + "/" + j(r.host) + "?t=" + Date.now(), d]; e.map(function (w) { i = l.createElement(a); i.defer = 1; i.src = w; z.parentNode.insertBefore(i, z); }); u.amvartem = m;
+      (function(m,o,d,u,l,a,r,i,z,e) {
+        u[m]={rq:[],ready:function(j){u[m].rq.push(j);},m:m,o:o,d:d,r:r};function j(s){return encodeURIComponent(btoa(s));}z=l.getElementById(m+"-"+a);r=u.location;
+        e=[d+"/page/"+o+"/"+j(r.pathname)+"/"+j(r.host)+"?t="+Date.now(),d];e.map(function(w){i=l.createElement(a);i.defer=1;i.src=w;z.parentNode.insertBefore(i,z);});u.amvartem=m;
       })("Userfront", "PROJECT_ID", "https://mod.userfront.com/v2", window, document, "script");
     </script>
     <!--/Userfront -->
   </head>
 
   <body>
-    <div class="bg"></div>
-
     <header class="p-2">
       <div class="brand">
         <a href="/">
           <img
             src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
             alt="Userfront"
-          />
-        </a>
+            class="mr-2"
+          /><span class="text-dark">Userfront demo</span></a
+        ><span class="text-muted">&nbsp;/&nbsp;Signup</span>
       </div>
     </header>
 
-    <div class="container pb-5">
+    <div class="container py-5">
       <div class="row">
-        <div class="col-md-6 pt-5 text-center">
-          <div class="text-center">
-            <div class="d-inline-block" style="min-height:600px;">
-              <!-- Signup form -->
-              <div id="userfront-bannba"></div>
-            </div>
-
-            <div class="my-3">
-              <a href="/login" class="text-white mr-5">Login</a>
-              <a href="/reset" class="text-white">Password reset</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 pt-5">
-          <div class="content mx-3">
-            <p>
-              Your Signup Form lets you start growing your user base right away.
-            </p>
-            <p>
-              When users sign up, they are redirected to the Signup URL in your
-              Project Settings.
-            </p>
-            <p>
-              <img
-                src="https://res.cloudinary.com/component/image/upload/v1583361090/guide/signup_url.png"
-                class="mw-100 rounded"
-              />
-            </p>
-            <p>
-              You can also set a webhook if you want to be notified every time a
-              user is created.
-            </p>
-            <p>
-              <img
-                src="https://res.cloudinary.com/component/image/upload/v1582764381/webhook_url_qcmvkl.png"
-                class="mw-100 rounded"
-              />
-            </p>
-          </div>
+        <div class="col-12 text-center">
+          <!-- Signup form -->
+          <div id="userfront-bannba" class="w-100 d-inline-block" style="max-width: 400px;"></div>
         </div>
       </div>
     </div>
+
+    <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
+      <img src="../images/github.svg" alt="View on GitHub" />
+    </a>
   </body>
 </html>

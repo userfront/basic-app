@@ -4,33 +4,17 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
 
+const projectId = "demo1234";
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-function getPage(pageName) {
-  return new Promise(resolve => {
-    fs.readFile("./pages/" + pageName + ".html", "utf8", (err, data) => {
-      if (err) {
-        console.error(err);
-        return res.send("Problem loading page");
-      }
-
-      // Replace project ID or default to demo project
-      const result = data.replace(
-        /PROJECT_ID/g,
-        app.locals.projectId || "g48xypb9"
-      );
-      resolve(result);
-    });
-  });
-}
-
 // Set local variables
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   app.locals.isLocal = req.hostname.indexOf("userfront.dev") < 0;
-  app.locals.projectId = req.subdomains[0] || "";
+  app.locals.projectId = req.subdomains[0] || projectId;
   next();
 });
 
@@ -45,37 +29,47 @@ app.get("/", (req, res) => {
   }
 
   fs.readFile(fileToSend, "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-      return res.send("Problem loading page");
-    }
-    res.send(data);
+    if (err) return res.send("Problem loading page");
+    res.send(replaceProjectId(data));
   });
 });
 
 app.get("/signup", async (req, res) => {
-  const page = await getPage("signup");
-  res.send(page);
+  fs.readFile("./pages/signup.html", "utf8", (err, data) => {
+    if (err) return res.send("Problem loading page");
+    res.send(replaceProjectId(data));
+  });
 });
 
 app.get("/login", async (req, res) => {
-  const page = await getPage("login");
-  res.send(page);
+  fs.readFile("./pages/login.html", "utf8", (err, data) => {
+    if (err) return res.send("Problem loading page");
+    res.send(replaceProjectId(data));
+  });
 });
 
 app.get("/reset", async (req, res) => {
-  const page = await getPage("reset");
-  res.send(page);
+  fs.readFile("./pages/reset.html", "utf8", (err, data) => {
+    if (err) return res.send("Problem loading page");
+    res.send(replaceProjectId(data));
+  });
 });
 
 app.get("/dashboard", async (req, res) => {
   // Redirect if the auth.${projectId} header is not present
-  if (!app.locals.projectId || !req.cookies[`auth.${app.locals.projectId}`]) {
-    return res.redirect("/login?message=Log in to access the dashboard");
+  if (!req.cookies[`auth.${app.locals.projectId}`]) {
+    return res.redirect("/login");
   }
-  const page = await getPage("dashboard");
-  res.send(page);
+
+  fs.readFile("./pages/dashboard.html", "utf8", (err, data) => {
+    if (err) return res.send("Problem loading page");
+    res.send(replaceProjectId(data));
+  });
 });
+
+function replaceProjectId(page) {
+  return page.replace(/PROJECT_ID/g, app.locals.projectId);
+}
 
 // Create server
 const http = require("http");

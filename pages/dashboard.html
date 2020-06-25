@@ -7,74 +7,57 @@
     <link rel="icon" href="../images/favicon.png" />
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
 
-    <title>Userfront app walkthrough</title>
+    <title>Userfront toolkit demo</title>
 
     <!-- Userfront -->
     <!-- prettier-ignore -->
     <script id="Userfront-script">
-      (function (m, o, d, u, l, a, r, i, z, e) {
-        u[m] = { rq: [], ready: function (j) { u[m].rq.push(j); }, m: m, o: o, d: d, r: r }; function j(s) { return encodeURIComponent(btoa(s)); } z = l.getElementById(m + "-" + a); r = u.location;
-        e = [d + "/page/" + o + "/" + j(r.pathname) + "/" + j(r.host) + "?t=" + Date.now(), d]; e.map(function (w) { i = l.createElement(a); i.defer = 1; i.src = w; z.parentNode.insertBefore(i, z); }); u.amvartem = m;
+      (function(m,o,d,u,l,a,r,i,z,e) {
+        u[m]={rq:[],ready:function(j){u[m].rq.push(j);},m:m,o:o,d:d,r:r};function j(s){return encodeURIComponent(btoa(s));}z=l.getElementById(m+"-"+a);r=u.location;
+        e=[d+"/page/"+o+"/"+j(r.pathname)+"/"+j(r.host)+"?t="+Date.now(),d];e.map(function(w){i=l.createElement(a);i.defer=1;i.src=w;z.parentNode.insertBefore(i,z);});u.amvartem=m;
       })("Userfront", "PROJECT_ID", "https://mod.userfront.com/v2", window, document, "script");
     </script>
     <!--/Userfront -->
   </head>
 
   <body>
-    <div class="bg"></div>
-
     <header class="p-2">
       <div class="brand">
         <a href="/">
           <img
             src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
             alt="Userfront"
-          />
-        </a>
+            class="mr-2"
+          /><span class="text-dark">Userfront demo</span></a
+        ><span class="text-muted">&nbsp;/&nbsp;Dashboard</span>
       </div>
     </header>
 
-    <div class="container pb-5">
+    <div class="container py-5">
       <div class="row">
-        <div class="col-md-6 pt-5">
-          <div class="d-inline-block" style="min-width:400px; min-height:280px;">
-            <!-- User profile -->
-            <div id="userfront-dkbomd"></div>
-            <!-- Logout button -->
-            <div id="userfront-bakddr" class="mt-3"></div>
-          </div>
-        </div>
-
-        <div class="col-md-6 pt-5">
-          <div class="content mx-3">
-            <p>
-              You can determine if a user is logged in by accessing the `auth.xxxxxxxx` cookie. If
-              it is present, the user is logged in and the Log Out button will be visible.
-            </p>
-            <p>
-              Clicking the Log Out button will log out the user, invalidate their token, and
-              redirect them to the Logout URL in your Project Settings.
-            </p>
-            <p>
-              <img
-                src="https://res.cloudinary.com/component/image/upload/v1583361090/guide/logout_url.png"
-                class="mw-100 rounded"
-              />
-            </p>
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <p>
+                This page is restricted to users who have the <code>auth.PROJECT_ID</code> cookie
+                present.
+              </p>
+              <div class="d-inline-block">
+                <!-- Logout button -->
+                <div id="userfront-bakddr" class="mt-3"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
+      <img src="../images/github.svg" alt="View on GitHub" />
+    </a>
   </body>
 </html>

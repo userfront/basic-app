@@ -1,6 +1,6 @@
 # Userfront toolkit demo
 
-This app serves as an example to demonstrate how to use your toolkit mods to allow your users to sign up, log in, reset their password, view & edit their profile, and log out.
+This app serves as an example to demonstrate how to use your Toolkit to allow your users to sign up, log in, reset their password, view & edit their profile, and log out.
 
 ## Clone this repo and run locally
 

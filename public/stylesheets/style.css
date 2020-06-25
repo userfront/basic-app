@@ -16,15 +16,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, span, i, a, button, input, .card-body {
   color: white !important;
 }
 
-.bg {
-  position: fixed;
-  background: url("../images/bg-pattern.png"), #7b4397;
-  background: url("../images/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
+body {
+  background-image: url('https://res.cloudinary.com/component/image/upload/c_scale,o_7,w_1200/v1586478091/permanent/soon.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .header {

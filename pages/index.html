@@ -18,12 +18,10 @@
       crossorigin="anonymous"
     />
 
-    <title>Userfront app walkthrough</title>
+    <title>Userfront demo app</title>
   </head>
 
   <body>
-    <div class="bg"></div>
-
     <header class="p-2">
       <div class="brand">
         <a href="/">
@@ -52,11 +50,7 @@
                 </p>
               </div>
 
-              <form
-                id="project-form"
-                name="project-form"
-                class="py-3 project-form"
-              >
+              <form id="project-form" name="project-form" class="py-3 project-form">
                 <div class="form-group mb-2">
                   <input
                     type="text"
@@ -74,10 +68,7 @@
                 </div>
 
                 <div class="mt-5 w-100 text-center">
-                  <a
-                    href="https://g48xypb9.userfront.dev"
-                    style="color:#5e72e4"
-                  >
+                  <a href="https://g48xypb9.userfront.dev" style="color: #5e72e4;">
                     Use example ID
                   </a>
                 </div>
@@ -92,9 +83,7 @@
       function handleSubmit(event) {
         event.preventDefault();
         var projectInput = document.getElementsByName("project")[0];
-        window.location.replace(
-          "https://" + projectInput.value + ".userfront.dev"
-        );
+        window.location.replace("https://" + projectInput.value + ".userfront.dev");
       }
 
       var form = document.getElementById("project-form");

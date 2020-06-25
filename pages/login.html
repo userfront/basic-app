@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Userfront app walkthrough</title>
+    <title>Userfront demo app</title>
 
     <!-- Userfront -->
     <!-- prettier-ignore -->
@@ -32,8 +32,6 @@
   </head>
 
   <body>
-    <div class="bg"></div>
-
     <header class="p-2">
       <div class="brand">
         <a href="/">
@@ -51,16 +49,9 @@
           <div class="text-center">
             <div class="d-inline-block">
               <!-- Login form -->
-              <div
-                id="userfront-orkkod"
-                style="min-width:400px;min-height:280px;"
-              ></div>
+              <div id="userfront-orkkod" style="min-width: 400px; min-height: 280px;"></div>
 
-              <div
-                id="info-message"
-                class="alert alert-info mt-3"
-                style="display:none"
-              ></div>
+              <div id="info-message" class="alert alert-info mt-3" style="display: none;"></div>
             </div>
 
             <div class="my-3">
@@ -75,8 +66,7 @@
               Your Login Form lets your users log in.
             </p>
             <p>
-              When users log in, they are redirected to the Login URL in your
-              Project Settings.
+              When users log in, they are redirected to the Login URL in your Project Settings.
             </p>
             <p>
               <img
@@ -93,9 +83,7 @@
   <script>
     if (window.location.search.indexOf("?message=") > -1) {
       var alert = document.getElementById("info-message");
-      var message = decodeURIComponent(
-        window.location.search.split("?message=")[1].split("?")[0]
-      );
+      var message = decodeURIComponent(window.location.search.split("?message=")[1].split("?")[0]);
       alert.innerHTML = message;
       alert.style.display = "block";
     }

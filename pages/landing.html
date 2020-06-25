@@ -18,12 +18,10 @@
       crossorigin="anonymous"
     />
 
-    <title>Userfront app walkthrough</title>
+    <title>Userfront demo app</title>
   </head>
 
   <body>
-    <div class="bg"></div>
-
     <header class="p-2">
       <div class="brand">
         <a href="/">
@@ -40,28 +38,21 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <div
-                id="project-alert"
-                class="alert alert-info"
-                style="display:none;"
-              >
-                If you are running this page locally, be sure to add your
-                project ID to the Userfront script on each page.
+              <div id="project-alert" class="alert alert-info" style="display: none;">
+                If you are running this page locally, be sure to add your project ID to the
+                Userfront script on each page.
               </div>
               <h2 class="my-4">Userfront demo</h2>
               <h5 class="mb-4">
                 These tools are included with your Userfront project:
               </h5>
               <div class="list-group">
-                <a
-                  href="/signup"
-                  class="list-group-item list-group-item-action"
-                >
+                <a href="/signup" class="list-group-item list-group-item-action">
                   <div class="media flex-column flex-sm-row">
                     <img
                       src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_240,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_240,b_rgb:ffffff/v1582158400/signup_rntzec.png"
                       class="mr-3 mb-3 mb-sm-0"
-                      style="width:240px"
+                      style="width: 240px;"
                       alt="Logout form"
                     />
                     <div class="media-body">
@@ -70,10 +61,9 @@
                         Allows a new user to sign up for your project.
                       </p>
                       <p>
-                        When a user signs up, they are redirected to the URL of
-                        your choice (default is <code>/dashboard</code>). They
-                        also receive a welcome email with a link to confirm
-                        their email address.
+                        When a user signs up, they are redirected to the URL of your choice (default
+                        is <code>/dashboard</code>). They also receive a welcome email with a link
+                        to confirm their email address.
                       </p>
                     </div>
                   </div>
@@ -83,7 +73,7 @@
                     <img
                       src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582157205/login_mogj1i.png"
                       class="mr-3 mb-3 mb-sm-0"
-                      style="width:240px"
+                      style="width: 240px;"
                       alt="Login form"
                     />
                     <div class="media-body">
@@ -92,10 +82,9 @@
                         Allows an existing user to log into your project.
                       </p>
                       <p>
-                        When a user logs in, they are redirected to the URL of
-                        your choice (default is <code>/dashboard</code>). In
-                        addition to logging in directly, users can request a
-                        login link or password reset email.
+                        When a user logs in, they are redirected to the URL of your choice (default
+                        is <code>/dashboard</code>). In addition to logging in directly, users can
+                        request a login link or password reset email.
                       </p>
                     </div>
                   </div>
@@ -105,7 +94,7 @@
                     <img
                       src="https://res.cloudinary.com/component/image/upload/v1582158400/reset_gtr63a.png"
                       class="mr-3 mb-3 mb-sm-0"
-                      style="width:240px"
+                      style="width: 240px;"
                       alt="Password reset form"
                     />
                     <div class="media-body">
@@ -114,23 +103,20 @@
                         Allows an existing user to reset their password.
                       </p>
                       <p>
-                        When users request a password reset email, they are
-                        directed to the URL of your choice (default is
-                        <code>/reset</code>). This form is used to send the
-                        password reset email and also to reset the password.
+                        When users request a password reset email, they are directed to the URL of
+                        your choice (default is
+                        <code>/reset</code>). This form is used to send the password reset email and
+                        also to reset the password.
                       </p>
                     </div>
                   </div>
                 </a>
-                <a
-                  href="/dashboard"
-                  class="list-group-item list-group-item-action"
-                >
+                <a href="/dashboard" class="list-group-item list-group-item-action">
                   <div class="media flex-column flex-sm-row">
                     <img
                       src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582158400/logout_uje4x0.png"
                       class="mr-3 mb-3 mb-sm-0"
-                      style="width:240px"
+                      style="width: 240px;"
                       alt="Logout button"
                     />
                     <div class="media-body">
@@ -139,33 +125,27 @@
                         Allows a logged in user to log out.
                       </p>
                       <p>
-                        When users log out, they are directed to the URL of your
-                        choice (default is
+                        When users log out, they are directed to the URL of your choice (default is
                         <code>/login</code>).
                       </p>
                     </div>
                   </div>
                 </a>
-                <a
-                  href="/dashboard"
-                  class="list-group-item list-group-item-action"
-                >
+                <a href="/dashboard" class="list-group-item list-group-item-action">
                   <div class="media flex-column flex-sm-row">
                     <img
                       src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582158893/profile_kbeaou.png"
                       class="mr-3 mb-3 mb-sm-0"
-                      style="width:240px"
+                      style="width: 240px;"
                       alt="User profile"
                     />
                     <div class="media-body">
                       <h4 class="mt-0">User profile</h4>
                       <p>
-                        Allows a logged in user to view and update their
-                        profile.
+                        Allows a logged in user to view and update their profile.
                       </p>
                       <p>
-                        Updates are automatically reflected in your user
-                        dashboard.
+                        Updates are automatically reflected in your user dashboard.
                       </p>
                     </div>
                   </div>

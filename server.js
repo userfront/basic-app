@@ -57,10 +57,8 @@ app.get("/reset", async (req, res) => {
 
 app.get("/dashboard", async (req, res) => {
   // Redirect if the auth.${projectId} header is not present
-  if (!app.locals.projectId || !req.cookies[`auth.${app.locals.projectId}`]) {
-    // return res.redirect("/login");
-    console.log(app.locals.projectId);
-    console.log(req.cookies);
+  if (!req.cookies[`auth.${app.locals.projectId}`]) {
+    return res.redirect("/login");
   }
 
   fs.readFile("./pages/dashboard.html", "utf8", (err, data) => {

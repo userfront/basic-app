@@ -4,6 +4,8 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
 
+const projectId = "demo1234";
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
@@ -12,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 // Set local variables
 app.use(function (req, res, next) {
   app.locals.isLocal = req.hostname.indexOf("userfront.dev") < 0;
-  app.locals.projectId = req.subdomains[0] || "";
+  app.locals.projectId = req.subdomains[0] || projectId;
   next();
 });
 
@@ -56,7 +58,9 @@ app.get("/reset", async (req, res) => {
 app.get("/dashboard", async (req, res) => {
   // Redirect if the auth.${projectId} header is not present
   if (!app.locals.projectId || !req.cookies[`auth.${app.locals.projectId}`]) {
-    return res.redirect("/login");
+    // return res.redirect("/login");
+    console.log(app.locals.projectId);
+    console.log(req.cookies);
   }
 
   fs.readFile("./pages/dashboard.html", "utf8", (err, data) => {
@@ -66,7 +70,7 @@ app.get("/dashboard", async (req, res) => {
 });
 
 function replaceProjectId(page) {
-  return page.replace(/PROJECT_ID/g, app.locals.projectId || "demo2020");
+  return page.replace(/PROJECT_ID/g, app.locals.projectId);
 }
 
 // Create server

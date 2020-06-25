@@ -1,13 +1,34 @@
 # Userfront toolkit demo
 
-This app serves as an example to demonstrate how to use your Toolkit to allow your users to sign up, log in, reset their password, view & edit their profile, and log out.
+This app demonstrates how to use the Userfront Toolkit to allow signup, login, password reset, and logout.
 
-## Clone this repo and run locally
+## To run this site locally
 
-Clone repo and install dependencies: `npm install`
+1. Clone the repo and install dependencies
 
-Start app: `npm start`
+```
+git clone https://github.com/userfront/toolkit-demo.git
+cd toolkit-demo
+npm install
+```
 
-Start in watch/development mode: `npm run dev`
+2. Replace the project ID at the top of `server.js` with your own project ID. This can be found in the URL when you're logged into Userfront.
 
-After server is started the application will be available at http://localhost:3333
+![Userfront project ID](https://res.cloudinary.com/component/image/upload/v1583347563/guide/project_id_ilsrsa.png)
+
+```js
+// server.js
+const projectId = "demo1234";
+```
+
+3. Start the server
+
+```
+npm start
+```
+
+The application will be available at http://localhost:3333
+
+---
+
+You can also run in watch/development mode with `npm run dev`

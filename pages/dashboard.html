@@ -37,31 +37,20 @@
       </div>
     </header>
 
-    <div class="container pb-5">
+    <div class="container py-5">
       <div class="row">
-        <div class="col-md-6 pt-5">
-          <div class="d-inline-block" style="min-width: 400px; min-height: 280px;">
-            <!-- Logout button -->
-            <div id="userfront-bakddr" class="mt-3"></div>
-          </div>
-        </div>
-
-        <div class="col-md-6 pt-5">
-          <div class="content mx-3">
-            <p>
-              You can determine if a user is logged in by accessing the `auth.xxxxxxxx` cookie. If
-              it is present, the user is logged in and the Log Out button will be visible.
-            </p>
-            <p>
-              Clicking the Log Out button will log out the user, invalidate their token, and
-              redirect them to the Logout URL in your Project Settings.
-            </p>
-            <p>
-              <img
-                src="https://res.cloudinary.com/component/image/upload/v1583361090/guide/logout_url.png"
-                class="mw-100 rounded"
-              />
-            </p>
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <p>
+                This page is restricted to users who have the <code>auth.PROJECT_ID</code> cookie
+                present.
+              </p>
+              <div class="d-inline-block">
+                <!-- Logout button -->
+                <div id="userfront-bakddr" class="mt-3"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

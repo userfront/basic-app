@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <title>Userfront toolkit demo</title>
+  </head>
+
+  <body>
+    <header class="p-2">
+      <div class="brand">
+        <a href="/">
+          <img
+            src="https://res.cloudinary.com/component/image/upload/v1582652683/circle_400_light_jrgbjq.png"
+            alt="Userfront"
+            class="mr-2"
+          /><span class="text-dark">Userfront demo</span></a
+        >
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="my-4 text-center">
+                <h2>Enter your project ID</h2>
+                <img
+                  src="https://res.cloudinary.com/component/image/upload/w_400,e_sharpen:50,e_grayscale/v1583347563/guide/project_id_ilsrsa.png"
+                  class="mw-100 my-1"
+                  alt="Userfront project ID"
+                />
+                <p class="text-muted">
+                  Found in your dashboard URL.
+                </p>
+              </div>
+
+              <form id="project-form" name="project-form" class="py-3 project-form">
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="project"
+                    name="project"
+                    placeholder="Project ID"
+                  />
+                </div>
+
+                <div class="mt-2">
+                  <button class="btn btn-block btn-primary mb-2" type="submit">
+                    Submit
+                  </button>
+                </div>
+
+                <div class="mt-5 w-100 text-center">
+                  <a href="https://demo1234.userfront.dev" style="color: #5e72e4;">
+                    Use example ID
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
+      <img src="../images/github.svg" alt="View on GitHub" />
+    </a>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        var projectInput = document.getElementsByName("project")[0];
+        window.location.replace("https://" + projectInput.value + ".userfront.dev");
+      }
+
+      var form = document.getElementById("project-form");
+      form.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

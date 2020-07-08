@@ -19,13 +19,11 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  // If the server is running locally or has a project ID,
-  // serve the landing page. Otherwise serve the index page.
-  let fileToSend;
-  if (app.locals.isLocal || app.locals.projectId) {
-    fileToSend = "./pages/landing.html";
-  } else {
-    fileToSend = "./pages/index.html";
+  // Show the landing page (index.html), unless the site is
+  // userfront.dev, in which case show the start page.
+  let fileToSend = "./pages/index.html";
+  if (req.hostname === "userfront.dev") {
+    fileToSend = "./pages/start.html";
   }
 
   fs.readFile(fileToSend, "utf8", (err, data) => {

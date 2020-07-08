@@ -28,45 +28,59 @@
     </header>
 
     <div class="container">
-      <div class="row mt-5">
-        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+      <div class="row my-5">
+        <div class="col-12">
+          <div id="project-alert" class="alert alert-info" style="display: none;">
+            Be sure to update server.js with your project ID at the top (replace
+            <code>const projectId = "PROJECT_ID";</code>)
+          </div>
           <div class="card">
             <div class="card-body">
-              <div class="my-4 text-center">
-                <h2>Enter your project ID</h2>
-                <img
-                  src="https://res.cloudinary.com/component/image/upload/w_400,e_sharpen:50,e_grayscale/v1583347563/guide/project_id_ilsrsa.png"
-                  class="mw-100 my-1"
-                  alt="Userfront project ID"
-                />
-                <p class="text-muted">
-                  Found in your dashboard URL.
-                </p>
-              </div>
-
-              <form id="project-form" name="project-form" class="py-3 project-form">
-                <div class="form-group mb-2">
-                  <input
-                    type="text"
-                    class="form-control form-control-lg"
-                    id="project"
-                    name="project"
-                    placeholder="Project ID"
-                  />
-                </div>
-
-                <div class="mt-2">
-                  <button class="btn btn-block btn-primary mb-2" type="submit">
-                    Submit
-                  </button>
-                </div>
-
-                <div class="mt-5 w-100 text-center">
-                  <a href="https://demo1234.userfront.dev" style="color: #5e72e4;">
-                    Use example ID
+              <p class="mb-4">
+                These tools are included with your Userfront project:
+              </p>
+              <div class="row">
+                <div class="col-sm-3 text-center mb-2">
+                  <a href="/signup">
+                    <small>Signup form</small>
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_240,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_240,b_rgb:ffffff/v1582158400/signup_rntzec.png"
+                      class="w-100 mt-2"
+                      alt="Signup form"
+                    />
                   </a>
                 </div>
-              </form>
+                <div class="col-sm-3 text-center mb-2">
+                  <a href="/login">
+                    <small>Login form</small>
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582157205/login_mogj1i.png"
+                      class="w-100 mt-2"
+                      alt="Login form"
+                    />
+                  </a>
+                </div>
+                <div class="col-sm-3 text-center mb-2">
+                  <a href="/reset">
+                    <small>Password reset</small>
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/v1582158400/reset_gtr63a.png"
+                      class="w-100 mt-2"
+                      alt="Password reset"
+                    />
+                  </a>
+                </div>
+                <div class="col-sm-3 text-center mb-2">
+                  <a href="/dashboard">
+                    <small>Logout button</small>
+                    <img
+                      src="https://res.cloudinary.com/component/image/upload/c_crop,e_trim:2:white/if_w_lt_6/c_lpad,h_176,w_340,l_text:Arial_16:No%20preview,co_rgb:999999/if_end/if_w_lt_100/w_1.33,h_1.33,e_sharpen:50/if_end/c_lpad,h_176,w_340,b_rgb:ffffff/v1582158400/logout_uje4x0.png"
+                      class="w-100 mt-2"
+                      alt="Logout button"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -76,16 +90,15 @@
     <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
       <img src="../images/github.svg" alt="View on GitHub" />
     </a>
-
-    <script>
-      function handleSubmit(event) {
-        event.preventDefault();
-        var projectInput = document.getElementsByName("project")[0];
-        window.location.replace("https://" + projectInput.value + ".userfront.dev");
-      }
-
-      var form = document.getElementById("project-form");
-      form.addEventListener("submit", handleSubmit);
-    </script>
   </body>
+
+  <script>
+    var alert = document.getElementById("project-alert");
+    if (
+      window.location.href.indexOf("userfront.dev") < 0 &&
+      alert.innerHTML.indexOf("demo1234") > -1
+    ) {
+      alert.style.display = "block";
+    }
+  </script>
 </html>

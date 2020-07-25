@@ -54,8 +54,8 @@ app.get("/reset", async (req, res) => {
 });
 
 app.get("/dashboard", async (req, res) => {
-  // Redirect if the auth.${projectId} header is not present
-  if (!req.cookies[`auth.${app.locals.projectId}`]) {
+  // Redirect if the access.${projectId} header is not present
+  if (!req.cookies[`access.${app.locals.projectId}`]) {
     return res.redirect("/login");
   }
 

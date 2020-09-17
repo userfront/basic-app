@@ -8,10 +8,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, span, i, a, button, input, .card-body {
   font-family: "Open Sans", sans-serif;
 }
 
-[radokd] .am-header .am-logo {
-  margin-left: -60px;
-}
-
 [bakddr] .af-text-muted {
   color: white !important;
 }
@@ -32,6 +28,10 @@ body {
   width: 100%;
   z-index: 10001;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.075);
+}
+
+.header-false {
+  display: none;
 }
 
 .brand a {

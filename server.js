@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set local variables
 app.use(function (req, res, next) {
+  const subdomain = (req.subdomains[0] || "").replace("live-", "");
+  app.locals.projectId = subdomain || projectId;
   app.locals.isLocal = req.hostname.indexOf("userfront.dev") < 0;
-  app.locals.projectId = req.subdomains[0] || projectId;
+  app.locals.showHeader = req.hostname.indexOf("live-") < 0;
   next();
 });
 
@@ -28,28 +30,28 @@ app.get("/", (req, res) => {
 
   fs.readFile(fileToSend, "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");
-    res.send(replaceProjectId(data));
+    res.send(buildPage(data));
   });
 });
 
 app.get("/signup", async (req, res) => {
   fs.readFile("./pages/signup.html", "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");
-    res.send(replaceProjectId(data));
+    res.send(buildPage(data));
   });
 });
 
 app.get("/login", async (req, res) => {
   fs.readFile("./pages/login.html", "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");
-    res.send(replaceProjectId(data));
+    res.send(buildPage(data));
   });
 });
 
 app.get("/reset", async (req, res) => {
   fs.readFile("./pages/reset.html", "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");
-    res.send(replaceProjectId(data));
+    res.send(buildPage(data));
   });
 });
 
@@ -61,12 +63,14 @@ app.get("/dashboard", async (req, res) => {
 
   fs.readFile("./pages/dashboard.html", "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");
-    res.send(replaceProjectId(data));
+    res.send(buildPage(data));
   });
 });
 
-function replaceProjectId(page) {
-  return page.replace(/PROJECT_ID/g, app.locals.projectId);
+function buildPage(page) {
+  return page
+    .replace(/PROJECT_ID/g, app.locals.projectId)
+    .replace(/header-display/g, `header-${app.locals.showHeader}`);
 }
 
 // Create server

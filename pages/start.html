@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <header class="p-2">
+    <header class="p-2 header-display">
       <div class="brand">
         <a href="/">
           <img
@@ -25,6 +25,9 @@
           /><span class="text-dark">Userfront demo</span></a
         >
       </div>
+      <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
+        <img src="../images/github.svg" alt="View on GitHub" />
+      </a>
     </header>
 
     <div class="container">
@@ -39,9 +42,7 @@
                   class="mw-100 my-1"
                   alt="Userfront project ID"
                 />
-                <p class="text-muted">
-                  Found in your dashboard URL.
-                </p>
+                <p class="text-muted">Found in your dashboard URL.</p>
               </div>
 
               <form id="project-form" name="project-form" class="py-3 project-form">
@@ -56,13 +57,11 @@
                 </div>
 
                 <div class="mt-2">
-                  <button class="btn btn-block btn-primary mb-2" type="submit">
-                    Submit
-                  </button>
+                  <button class="btn btn-block btn-primary mb-2" type="submit">Submit</button>
                 </div>
 
                 <div class="mt-5 w-100 text-center">
-                  <a href="https://demo1234.userfront.dev" style="color: #5e72e4;">
+                  <a href="https://demo1234.userfront.dev" style="color: #5e72e4">
                     Use example ID
                   </a>
                 </div>
@@ -72,10 +71,6 @@
         </div>
       </div>
     </div>
-
-    <a href="https://github.com/userfront/toolkit-demo" class="github" target="_blank">
-      <img src="../images/github.svg" alt="View on GitHub" />
-    </a>
 
     <script>
       function handleSubmit(event) {

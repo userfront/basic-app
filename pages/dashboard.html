@@ -42,21 +42,47 @@
 
     <div class="container py-5">
       <div class="row">
-        <div class="col-12">
-          <div class="card">
+        <div class="col-md-6 offset-md-3">
+          <div id="logged-out" class="card" style="display: none">
             <div class="card-body">
-              <p>
-                This page is restricted to users who have the <code>access.PROJECT_ID</code> cookie
-                present.
+              <h5 class="card-title">You are not logged in</h5>
+              <p class="card-text">
+                <a href="/signup" class="btn btn-sm btn-secondary mr-2">Sign up</a>
+                <a href="/login" class="btn btn-sm btn-secondary">Log in</a>
               </p>
-              <div class="d-inline-block">
+            </div>
+          </div>
+
+          <div id="logged-in" style="display: none">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <img src="" class="rounded-circle mr-3" style="width: 70px; height: 70px" />
+                  <div>
+                    <p id="user-name" class="mb-0"></p>
+                    <p id="user-email" class="mb-0 text-muted"></p>
+                  </div>
+                </div>
+
                 <!-- Logout button -->
-                <div id="userfront-bakddr" class="mt-3"></div>
+                <div id="userfront-bakddr" class="mt-3" style="min-height: 44px"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">Access token data:</div>
+                <pre><code id="access-token-display"></code></pre>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@2.2.0/build/jwt-decode.min.js"></script>
+    <script src="/scripts/dashboard.js"></script>
   </body>
 </html>

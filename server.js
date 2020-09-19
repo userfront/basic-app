@@ -15,8 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(function (req, res, next) {
   const subdomain = (req.subdomains[0] || "").replace("live-", "");
   app.locals.projectId = subdomain || projectId;
-  app.locals.isLocal = req.hostname.indexOf("userfront.dev") < 0;
-  app.locals.showHeader = req.hostname.indexOf("live-") < 0;
+  const hostname = req.hostname || "";
+  app.locals.isLocal = hostname.indexOf("userfront.dev") < 0;
+  app.locals.showHeader = hostname.indexOf("live-") < 0;
   next();
 });
 

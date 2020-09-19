@@ -57,9 +57,11 @@ app.get("/reset", async (req, res) => {
 
 app.get("/dashboard", async (req, res) => {
   // Redirect if the access.${projectId} header is not present
-  // if (!req.cookies[`access.${app.locals.projectId}`]) {
-  //   return res.redirect("/login");
-  // }
+  if (!req.cookies[`access.${app.locals.projectId}`]) {
+    // return res.redirect("/login");
+    console.log(`access.${app.locals.projectId}`);
+    console.log(req.cookies[`access.${app.locals.projectId}`]);
+  }
 
   fs.readFile("./pages/dashboard.html", "utf8", (err, data) => {
     if (err) return res.send("Problem loading page");

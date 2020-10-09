@@ -16,8 +16,9 @@ app.use(function (req, res, next) {
   const subdomain = (req.subdomains[0] || "").replace("live-", "").replace("test-", "");
   app.locals.projectId = subdomain || projectId;
   const hostname = req.hostname || "";
-  app.locals.isLocal = hostname.indexOf("userfront.dev") < 0;
-  app.locals.showHeader = hostname.indexOf("live-") < 0 && hostname.indexOf("test-" < 0);
+  app.locals.isLocal = !hostname.includes("userfront.dev");
+  app.locals.showHeader = !hostname.includes("live-") && !hostname.includes("test-");
+  console.log(hostname, app.locals);
   next();
 });
 

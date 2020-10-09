@@ -13,11 +13,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set local variables
 app.use(function (req, res, next) {
-  const subdomain = (req.subdomains[0] || "").replace("live-", "");
+  const subdomain = (req.subdomains[0] || "").replace("live-", "").replace("test-", "");
   app.locals.projectId = subdomain || projectId;
   const hostname = req.hostname || "";
   app.locals.isLocal = hostname.indexOf("userfront.dev") < 0;
-  app.locals.showHeader = hostname.indexOf("live-") < 0;
+  app.locals.showHeader = hostname.indexOf("live-") < 0 || hostname.indexOf("test-" < 0);
   next();
 });
 

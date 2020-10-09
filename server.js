@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
   app.locals.projectId = subdomain || projectId;
   const hostname = req.hostname || "";
   app.locals.isLocal = hostname.indexOf("userfront.dev") < 0;
-  app.locals.showHeader = hostname.indexOf("live-") < 0 || hostname.indexOf("test-" < 0);
+  app.locals.showHeader = hostname.indexOf("live-") < 0 && hostname.indexOf("test-" < 0);
   next();
 });
 

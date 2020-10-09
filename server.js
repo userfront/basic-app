@@ -18,7 +18,6 @@ app.use(function (req, res, next) {
   const hostname = req.hostname || "";
   app.locals.isLocal = !hostname.includes("userfront.dev");
   app.locals.showHeader = !hostname.includes("live-") && !hostname.includes("test-");
-  console.log(hostname, app.locals);
   next();
 });
 

@@ -63,6 +63,14 @@ app.get("/dashboard", async (req, res) => {
   });
 });
 
+app.get("/iframe/:toolId", async (req, res) => {
+  fs.readFile("./pages/iframe.html", "utf8", (err, data) => {
+    if (err) return res.send("Problem loading page");
+    const page = buildPage(data);
+    res.send(page.replace(/TOOL_ID/, `userfront-${req.params.toolId}`));
+  });
+});
+
 function buildPage(page) {
   return page
     .replace(/PROJECT_ID/g, app.locals.projectId)

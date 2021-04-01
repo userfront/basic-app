@@ -53,19 +53,29 @@ function getAccessToken() {
 function showLoggedIn(user) {
   // Set image
   document.querySelector("#logged-in img").src = user.image;
+
   // Set name
   document.getElementById("user-name").innerText = user.name;
+
   // Set email
   document.getElementById("user-email").innerText = user.email;
+
   // Set access token information
   var token = jwt_decode(getAccessToken());
-  document.getElementById("access-token-display").innerText = `{
-  mode: "${token.mode}",
-  tenantId: "${token.tenantId}",
-  userId: ${token.userId},
-  userUuid: "${token.userUuid}",
-  isConfirmed: ${token.isConfirmed},
-  authorization: ${JSON.stringify(token.authorization, null, 4)}}`;
+
+  // Set up display token
+  var displayToken = {
+    mode: token.mode,
+    tenantId: token.tenantId,
+    userId: token.userId,
+    userUuid: token.userUuid,
+    isConfirmed: token.isConfirmed,
+    authorization: token.authorization,
+  };
+
+  // Add to card
+  document.getElementById("access-token-display").innerText = JSON.stringify(displayToken, null, 2);
+
   // Show card
   document.getElementById("logged-in").style.display = "block";
 }

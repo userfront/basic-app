@@ -65,7 +65,7 @@ function showLoggedIn(user) {
   userId: ${token.userId},
   userUuid: "${token.userUuid}",
   isConfirmed: ${token.isConfirmed},
-  authorization: ${JSON.stringify(token.authorization, null, 2)},
+  authorization: ${JSON.stringify(token.authorization, null, 4)},
 }`;
   // Show card
   document.getElementById("logged-in").style.display = "block";

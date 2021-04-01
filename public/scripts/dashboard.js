@@ -60,13 +60,12 @@ function showLoggedIn(user) {
   // Set access token information
   var token = jwt_decode(getAccessToken());
   document.getElementById("access-token-display").innerText = `{
-  userId: ${token.userId},
-  username: "${token.username}",
-  email: "${token.email}",
-  isConfirmed: ${token.isConfirmed},
-  tenantId: "${token.tenantId}",
   mode: "${token.mode}",
-  authorization: ${JSON.stringify(token.authorization)},
+  tenantId: "${token.tenantId}",
+  userId: ${token.userId},
+  userUuid: "${token.userUuid}",
+  isConfirmed: ${token.isConfirmed},
+  authorization: ${JSON.stringify(token.authorization, null, 2)},
 }`;
   // Show card
   document.getElementById("logged-in").style.display = "block";

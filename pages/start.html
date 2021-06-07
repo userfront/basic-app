@@ -36,22 +36,22 @@
           <div class="card">
             <div class="card-body">
               <div class="my-4 text-center">
-                <h2>Enter your project ID</h2>
+                <h2>Enter your account ID</h2>
                 <img
                   src="https://res.cloudinary.com/component/image/upload/w_400,e_sharpen:50,e_grayscale/v1583347563/guide/project_id_ilsrsa.png"
                   class="mw-100 my-1"
-                  alt="Userfront project ID"
+                  alt="Userfront account ID"
                 />
                 <p class="text-muted">Found in your dashboard URL.</p>
               </div>
 
-              <form id="project-form" name="project-form" class="py-3 project-form">
+              <form id="account-form" name="account-form" class="py-3 account-form">
                 <div class="form-group mb-2">
                   <input
                     type="text"
                     class="form-control form-control-lg"
-                    id="project"
-                    name="project"
+                    id="account"
+                    name="account"
                     placeholder="Project ID"
                   />
                 </div>
@@ -75,11 +75,11 @@
     <script>
       function handleSubmit(event) {
         event.preventDefault();
-        var projectInput = document.getElementsByName("project")[0];
-        window.location.replace("https://" + projectInput.value + ".userfront.dev");
+        var accountInput = document.getElementsByName("account")[0];
+        window.location.replace("https://" + accountInput.value + ".userfront.dev");
       }
 
-      var form = document.getElementById("project-form");
+      var form = document.getElementById("account-form");
       form.addEventListener("submit", handleSubmit);
     </script>
   </body>

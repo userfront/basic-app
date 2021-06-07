@@ -12,13 +12,13 @@ cd toolkit-demo
 npm install
 ```
 
-2. Replace the project ID at the top of `server.js` with your own project ID. This can be found in the URL when you're logged into Userfront.
+2. Replace the account ID at the top of `server.js` with your own account ID. This can be found in the URL when you're logged into Userfront.
 
-![Userfront project ID](https://res.cloudinary.com/component/image/upload/v1583347563/guide/project_id_ilsrsa.png)
+![Userfront account ID](https://res.cloudinary.com/component/image/upload/v1583347563/guide/project_id_ilsrsa.png)
 
 ```js
 // server.js
-const projectId = "demo1234";
+const accountId = "demo1234";
 ```
 
 3. Start the server

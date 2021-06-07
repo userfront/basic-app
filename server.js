@@ -4,7 +4,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
 
-const projectId = "demo1234";
+const accountId = "demo1234";
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
@@ -13,11 +13,15 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set local variables
 app.use(function (req, res, next) {
-  const subdomain = (req.subdomains[0] || "").replace("live-", "").replace("test-", "");
-  app.locals.projectId = subdomain || projectId;
+  const subdomain = (req.subdomains[0] || "")
+    .replace("live-", "")
+    .replace("test-", "")
+    .replace("vtest-", "");
+  app.locals.accountId = subdomain || accountId;
   const hostname = req.hostname || "";
   app.locals.isLocal = !hostname.includes("userfront.dev");
   app.locals.showHeader = !hostname.includes("live-") && !hostname.includes("test-");
+  app.locals.scriptVersion = hostname.includes("vtest-") ? "vtest" : "v3";
   next();
 });
 
@@ -73,7 +77,8 @@ app.get("/iframe/:toolId", async (req, res) => {
 
 function buildPage(page) {
   return page
-    .replace(/PROJECT_ID/g, app.locals.projectId)
+    .replace(/ACCOUNT_ID/g, app.locals.accountId)
+    .replace(/SCRIPT_VERSION/g, app.locals.scriptVersion)
     .replace(/header-display/g, `header-${app.locals.showHeader}`);
 }
 

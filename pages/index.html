@@ -33,13 +33,13 @@
     <div class="container">
       <div class="row my-5">
         <div class="col-12">
-          <div id="project-alert" class="alert alert-info" style="display: none">
-            Be sure to update server.js with your project ID at the top (replace
-            <code>const projectId = "PROJECT_ID";</code>)
+          <div id="account-alert" class="alert alert-info" style="display: none">
+            Be sure to update server.js with your account ID at the top (replace
+            <code>const accountId = "ACCOUNT_ID";</code>)
           </div>
           <div class="card">
             <div class="card-body">
-              <p class="mb-4">These tools are included with your Userfront project:</p>
+              <p class="mb-4">These tools are included with your Userfront account:</p>
               <div class="row">
                 <div class="col-sm-3 text-center mb-2">
                   <a href="/signup">
@@ -90,7 +90,7 @@
   </body>
 
   <script>
-    var alert = document.getElementById("project-alert");
+    var alert = document.getElementById("account-alert");
     if (
       window.location.href.indexOf("userfront.dev") < 0 &&
       alert.innerHTML.indexOf("demo1234") > -1

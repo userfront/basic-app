@@ -14,9 +14,9 @@ app.use(express.urlencoded({ extended: false }));
 // Set local variables
 app.use(function (req, res, next) {
   const subdomain = (req.subdomains[0] || "")
-    .replace("vtest-", "");
+    .replace("vtest-", "")
     .replace("live-", "")
-    .replace("test-", "")
+    .replace("test-", "");
   app.locals.accountId = subdomain || accountId;
   const hostname = req.hostname || "";
   app.locals.isLocal = !hostname.includes("userfront.dev");

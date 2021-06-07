@@ -13,14 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set local variables
 app.use(function (req, res, next) {
-  const subdomain = (req.subdomains[0] || "")
-    .replace("vtest-", "")
-    .replace("live-", "")
-    .replace("test-", "");
-  app.locals.accountId = subdomain || accountId;
+  const subdomainParts = (req.subdomains[0] || "").split("-");
+  const subdomainId = subdomainParts[subdomainParts.length - 1];
+  app.locals.accountId = subdomainId || accountId;
   const hostname = req.hostname || "";
   app.locals.isLocal = !hostname.includes("userfront.dev");
-  app.locals.showHeader = !hostname.includes("live-") && !hostname.includes("test-");
+  app.locals.showHeader = !hostname.startsWith("live-") && !hostname.startsWith("test-");
   app.locals.scriptVersion = hostname.includes("vtest-") ? "vtest" : "v3";
   next();
 });

@@ -1,14 +1,13 @@
-var tenantId = document
-  .getElementById("Userfront-script")
-  .innerHTML.split('", "https:')[0]
-  .split('"Userfront", "')[1];
-
 /**
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
 Userfront.ready(function () {
-  console.log("user", Userfront.user);
+  if (Userfront.accessToken()) {
+    showLoggedIn(Userfront.user);
+  } else {
+    showLoggedOut();
+  }
 });
 
 /**
@@ -31,21 +30,13 @@ function showLoggedIn(user) {
   // Set email
   document.getElementById("user-email").innerText = user.email;
 
-  // Set access token information
-  var token = jwt_decode(Userfront.accessToken());
-
-  // Set up display token
-  var displayToken = {
-    mode: token.mode,
-    tenantId: token.tenantId,
-    userId: token.userId,
-    userUuid: token.userUuid,
-    isConfirmed: token.isConfirmed,
-    authorization: token.authorization,
-  };
-
-  // Add to card
-  document.getElementById("access-token-display").innerText = JSON.stringify(displayToken, null, 2);
+  // Add access token info
+  var accessTokenInfo = jwt_decode(Userfront.accessToken());
+  document.getElementById("access-token-display").innerText = JSON.stringify(
+    accessTokenInfo,
+    null,
+    2
+  );
 
   // Show card
   document.getElementById("logged-in").style.display = "block";

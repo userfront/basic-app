@@ -9,8 +9,8 @@ var tenantId = document
  */
 console.log("Running", Object.keys(window.Userfront));
 window.Userfront.ready(function () {
+  console.log("Initialize for " + tenantId);
   try {
-    console.log("Initialize for " + tenantId);
     Userfront.init(tenantId);
     console.log("Getting self");
     getSelf().then(function (user) {

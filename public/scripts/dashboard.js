@@ -3,21 +3,26 @@ var tenantId = document
   .innerHTML.split('", "https:')[0]
   .split('"Userfront", "')[1];
 
-console.log("Initialize with " + tenantId);
-Userfront.init(tenantId);
-
 /**
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
 Userfront.ready(function () {
-  getSelf().then(function (user) {
-    if (user && user.userId) {
-      showLoggedIn(user);
-    } else {
-      showLoggedOut();
-    }
-  });
+  try {
+    console.log("Initialize for " + tenantId);
+    Userfront.init(tenantId);
+    console.log("Getting self");
+    getSelf().then(function (user) {
+      console.log("User", user);
+      if (user && user.userId) {
+        showLoggedIn(user);
+      } else {
+        showLoggedOut();
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 /**

@@ -1,8 +1,14 @@
+var tenantId = document
+  .getElementById("Userfront-script")
+  .innerHTML.split('", "https:')[0]
+  .split('"Userfront", "')[1];
+
 /**
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
 Userfront.ready(function () {
+  Userfront.init(tenantId);
   getSelf().then(function (user) {
     if (user && user.userId) {
       showLoggedIn(user);
@@ -18,7 +24,7 @@ Userfront.ready(function () {
  * but we are showing an API call here for demonstration.
  */
 function getSelf() {
-  var accessToken = getAccessToken();
+  var accessToken = Userfront.accessToken();
   return axios
     .get("https://api.userfront.com/v0/self", {
       headers: {
@@ -31,19 +37,6 @@ function getSelf() {
     .catch(function (error) {
       return {};
     });
-}
-
-/**
- * Return the access token from the browser's cookies.
- */
-function getAccessToken() {
-  // You should add your project ID directly instead of parsing the page
-  var projectId = document
-    .getElementById("Userfront-script")
-    .innerHTML.split('", "https:')[0]
-    .split('"Userfront", "')[1];
-
-  return Cookies.get("access." + projectId);
 }
 
 /**
@@ -61,7 +54,7 @@ function showLoggedIn(user) {
   document.getElementById("user-email").innerText = user.email;
 
   // Set access token information
-  var token = jwt_decode(getAccessToken());
+  var token = jwt_decode(Userfront.accessToken());
 
   // Set up display token
   var displayToken = {

@@ -6,9 +6,9 @@ var tenantId = document
 function startup() {
   console.log("Initialize for " + tenantId);
   try {
-    Userfront.init(tenantId);
+    // Userfront.init(tenantId);
     console.log("Getting self");
-    getSelf().then(function (user) {
+    return getSelf().then(function (user) {
       console.log("User", user);
       if (user && user.userId) {
         showLoggedIn(user);
@@ -25,11 +25,9 @@ function startup() {
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
-console.log("Running", Object.keys(window.Userfront));
-window.Userfront.ready(startup);
-window.Userfront.rq.push(startup);
-console.log("ready", window.Userfront.ready);
-console.log("rq", JSON.parse(JSON.stringify(window.Userfront.rq)));
+console.log("Running", tenantId, Object.keys(window.Userfront));
+Userfront.ready(startup);
+console.log("rq", Userfront.rq);
 
 /**
  * Request the user's information from the Userfront API.

@@ -25,6 +25,8 @@ window.Userfront.ready(function () {
     console.log(error);
   }
 });
+console.log("ready", window.Userfront.ready);
+console.log("rq", JSON.parse(JSON.stringify(window.Userfront.rq)));
 
 /**
  * Request the user's information from the Userfront API.

@@ -7,7 +7,7 @@ var tenantId = document
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
-console.log("Running");
+console.log("Running", Object.keys(window.Userfront));
 window.Userfront.ready(function () {
   try {
     console.log("Initialize for " + tenantId);

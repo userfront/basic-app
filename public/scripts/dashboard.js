@@ -7,8 +7,9 @@ var tenantId = document
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
-console.log("user", Userfront.user);
-console.log("email", Userfront.user.email);
+Userfront.ready(function () {
+  console.log("user", Userfront.user);
+});
 
 /**
  * Request the user's information from the Userfront API.

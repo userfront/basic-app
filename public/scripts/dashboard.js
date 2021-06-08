@@ -3,12 +3,7 @@ var tenantId = document
   .innerHTML.split('", "https:')[0]
   .split('"Userfront", "')[1];
 
-/**
- * Make an API call to get the user information, then either insert
- * it into the DOM, or show that the user is not logged in.
- */
-console.log("Running", Object.keys(window.Userfront));
-window.Userfront.ready(function () {
+function startup() {
   console.log("Initialize for " + tenantId);
   try {
     Userfront.init(tenantId);
@@ -24,7 +19,14 @@ window.Userfront.ready(function () {
   } catch (error) {
     console.log(error);
   }
-});
+}
+
+/**
+ * Make an API call to get the user information, then either insert
+ * it into the DOM, or show that the user is not logged in.
+ */
+console.log("Running", Object.keys(window.Userfront));
+window.Userfront.ready(startup);
 console.log("ready", window.Userfront.ready);
 console.log("rq", JSON.parse(JSON.stringify(window.Userfront.rq)));
 

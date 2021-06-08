@@ -3,52 +3,18 @@ var tenantId = document
   .innerHTML.split('", "https:')[0]
   .split('"Userfront", "')[1];
 
-function startup() {
-  console.log("Initialize for " + tenantId);
-  try {
-    // Userfront.init(tenantId);
-    console.log("Getting self");
-    return getSelf().then(function (user) {
-      console.log("User", user);
-      if (user && user.userId) {
-        showLoggedIn(user);
-      } else {
-        showLoggedOut();
-      }
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 /**
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
-console.log("Running", tenantId, Object.keys(window.Userfront));
-Userfront.ready(startup);
-console.log("rq", Userfront.rq);
+console.log("user", Userfront.user);
+console.log("email", Userfront.user.email);
 
 /**
  * Request the user's information from the Userfront API.
  * Most of this information can be found by reading the ID token instead,
  * but we are showing an API call here for demonstration.
  */
-function getSelf() {
-  var accessToken = Userfront.accessToken();
-  return axios
-    .get("https://api.userfront.com/v0/self", {
-      headers: {
-        authorization: "Bearer " + accessToken,
-      },
-    })
-    .then(function (res) {
-      return res.data;
-    })
-    .catch(function (error) {
-      return {};
-    });
-}
 
 /**
  * Insert user information into the DOM

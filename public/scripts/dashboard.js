@@ -3,12 +3,14 @@ var tenantId = document
   .innerHTML.split('", "https:')[0]
   .split('"Userfront", "')[1];
 
+console.log("Initialize with " + tenantId);
+Userfront.init(tenantId);
+
 /**
  * Make an API call to get the user information, then either insert
  * it into the DOM, or show that the user is not logged in.
  */
 Userfront.ready(function () {
-  Userfront.init(tenantId);
   getSelf().then(function (user) {
     if (user && user.userId) {
       showLoggedIn(user);

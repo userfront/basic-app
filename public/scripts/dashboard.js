@@ -27,6 +27,7 @@ function startup() {
  */
 console.log("Running", Object.keys(window.Userfront));
 window.Userfront.ready(startup);
+window.Userfront.rq.push(startup);
 console.log("ready", window.Userfront.ready);
 console.log("rq", JSON.parse(JSON.stringify(window.Userfront.rq)));
 

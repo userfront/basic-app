@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
   const hostname = req.hostname || "";
   app.locals.isLocal = !hostname.includes("userfront.dev");
   app.locals.showHeader = !hostname.startsWith("live-") && !hostname.startsWith("test-");
-  app.locals.scriptVersion = hostname.includes("vtest-") ? "vtest" : "v3";
+  app.locals.scriptVersion = hostname.includes("vtest-") ? "vtest" : "toolkit";
   next();
 });
 
